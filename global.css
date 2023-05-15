@@ -1,0 +1,257 @@
+:root {
+    --dark-background: #000000;
+    --dark-text: #F5F5F7;
+    --dark-link: #2997FF;
+    --light-background: #FFFFFF;
+    --light-text: #1D1D1F;
+    --light-text2: #86868B;
+    --light-link: #0066CC;
+}
+
+::selection {
+    color: white;
+    background-color: #795ce2;
+}
+
+.dark {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+.dark a {
+    color: var(--dark-link);
+}
+
+.light {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+.light a {
+    color: var(--light-link);
+}
+
+.light, .dark {
+    font-size: 20px;
+}
+
+.light h2, .dark h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.light p, .dark p {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.light-alt {
+    color: var(--light-text2);
+}
+
+.light a, .dark a {
+    text-decoration: none;
+}
+
+.light a:hover, .dark a:hover {
+    text-decoration: underline;
+}
+
+.light a::after, .dark a::after {
+    content: ">";
+    position: absolute;
+    padding-left: 6.3px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 54px;
+    top: 0;
+    background-color: #161617c8;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 100;
+}
+
+header a {
+    color: var(--dark-text);
+    text-decoration: none;
+    margin-bottom: 3px;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    opacity: 0.8;
+    transition: opacity 100ms ease-out;
+    font-weight: medium;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+.nav-button {
+    display: none;
+    height: 20px;
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    opacity: 0.8;
+}
+
+.nav-button rect {
+    transition: y 100ms ease-out 100ms, transform 100ms ease-out 0ms;
+    transform-origin: center center;
+}
+
+.active .nav-button rect {
+    y: 45;
+    transition: y 100ms ease-out 0ms, transform 100ms ease-out 100ms;
+}
+
+.active .nav-button rect:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.active .nav-button rect:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+main footer {
+    background-color: #F5F5F7;
+    min-height: 316px;
+    padding-block: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+main footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 70px;
+}
+
+main footer p {
+    font-size: 18px;
+    color: #6E6E73;
+}
+
+main footer a {
+    color: #6E6E73;
+}
+
+main footer .title {
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+main footer .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main footer .social a {
+    text-decoration: none;
+}
+
+main footer > p {
+    text-align: center;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 734px) {
+    nav {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        background-color: black;
+        padding: 60px 30px;
+        gap: 25px;
+        animation: nav-close 500ms ease-out forwards;
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);    
+    }
+
+    nav a {
+        font-size: 24px;
+    }
+
+    .active nav {
+        animation: nav-open 500ms ease-out forwards;
+        pointer-events: all;
+    }
+
+    @keyframes nav-open {
+        from {
+            opacity: 0;
+            clip-path: inset(0 0 100% 0);
+        }
+        to {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    @keyframes nav-close {
+        from {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+        }
+        to {
+            opacity: 0;
+            clip-path: inset(0 0 100% 0);
+        }
+    }
+
+    .logo {
+        left: 16px;
+    }
+
+    .nav-button {
+        display: block;
+    }
+
+    .light h2, .dark h2 {
+        font-size: 30px;
+    }
+
+    main footer .content {
+        flex-direction: column;
+    }
+}
