@@ -13,7 +13,6 @@ function onScroll() {
     macStudio.style.transform = "translateX(" + dist + "px)";
     macStudio.style.opacity = 1 - percent * 2;
     
-
     // Screen Parallax
     let rect = studioWallpaper.getBoundingClientRect();
     percent = Math.min(Math.max((rect.bottom / (window.outerHeight + rect.height)), 0), 1)
@@ -35,6 +34,4 @@ window.addEventListener("load", () => {
     
     onScroll();
     window.addEventListener("scroll", onScroll);
-    
-    document.querySelector(".loading").classList.add("hide");
 })
