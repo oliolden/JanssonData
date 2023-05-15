@@ -4,7 +4,7 @@
     src: url('/surface/Assets/css/fonts/all/normal/segoeui.eot?#iefix') format('embedded-opentype'),
          url('/surface/Assets/css/fonts/all/normal/segoeui.woff') format('woff'),
          url('/surface/Assets/css/fonts/all/normal/segoeui.svg#SegoeUI') format('svg');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -14,7 +14,7 @@
     src: url('/surface/Assets/css/fonts/all/semibold/seguisb.eot?#iefix') format('embedded-opentype'),
          url('/surface/Assets/css/fonts/all/semibold/seguisb.woff') format('woff'),
          url('/surface/Assets/css/fonts/all/semibold/seguisb.svg#SegoeUISemibold') format('svg');
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -24,7 +24,7 @@
     src: url('/surface/Assets/css/fonts/all/bold/segoeuib.eot?#iefix') format('eot')
          url('/surface/Assets/css/fonts/all/bold/segoeuib.woff') format('woff'),
          url('/surface/Assets/css/fonts/all/bold/segoeuib.svg#SegoeUIBold') format('svg');
-    font-weight: normal;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -34,7 +34,7 @@
     src: url('/surface/Assets/css/fonts/all/light/segoeuil.eot?#iefix') format('embedded-opentype'),
          url('/surface/Assets/css/fonts/all/light/segoeuil.woff') format('woff'),
          url('/surface/Assets/css/fonts/all/light/segoeuil.svg#SegoeUILight') format('svg');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
 }
 
